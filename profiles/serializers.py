@@ -5,7 +5,8 @@ from profiles.models import Profile
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ['id', 'studentId', 'name']
+        #fields = ['id', 'studentId', 'name']
+        fields = ['id', 'studentId', 'check']
 
     def create(self, validated_data):
         
@@ -13,7 +14,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         
-        instance.studentId = validated_data.get('id', instance.studentId)
-        instance.name = validated_data.get('name', instance.name)
+        instance.studentId = validated_data.get('studentId', instance.studentId)
+        instance.check = validated_data.get('check', instance.check)
         instance.save()
         return instance

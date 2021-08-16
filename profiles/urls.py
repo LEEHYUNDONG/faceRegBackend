@@ -5,6 +5,7 @@ from profiles import views
 urlpatterns = [
     path('profiles/', views.profile_list),
     path('profiles/<int:pk>', views.profile_detail),
+    #path('profiles/<int:studentId>', views.profile_detail),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

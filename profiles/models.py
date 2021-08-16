@@ -3,7 +3,8 @@ from django.db import models
 class Profile(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     studentId = models.CharField(max_length=10, blank=True, default='')
-    name = models.TextField()
+    check = models.CharField(max_length=6, default='False')
+    #name = models.TextField()
 
     
     class Meta:
