@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'getImage',
     'profiles',
     'corsheaders',
+    'checkImage',
 ]
 
 MIDDLEWARE = [
