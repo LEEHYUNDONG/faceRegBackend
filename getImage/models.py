@@ -1,15 +1,12 @@
 from django.db import models
-from pygments.lexers import get_all_lexers
-from pygments.styles import get_all_styles
+import os
 
-LEXERS = [item for item in get_all_lexers() if item[1]]
-LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
-STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
-
+def image_upload_path(instance, filename):
+    return 'face/'+os.path.join(instance.title, filename)
 
 class Image(models.Model):
     title = models.CharField(max_length=200, default='None')
-    image = models.ImageField(upload_to='face', default='../media/james.jpg')
+    image = models.ImageField(upload_to=image_upload_path, default='../media/james.jpg')
     
     
     def __str__(self):

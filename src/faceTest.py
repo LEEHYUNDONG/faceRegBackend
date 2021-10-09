@@ -10,7 +10,7 @@ import os
 mtcnn = MTCNN(image_size=240, margin=0, min_face_size=20) # mtcnn 초기화
 resnet = InceptionResnetV1(pretrained='vggface2').eval() # resnet을 pretrained된 것을 사용한다.
 
-dataset=datasets.ImageFolder('./Face') # 사진 폴더 경로
+dataset=datasets.ImageFolder('./face') # 사진 폴더 경로
 idx_to_class = {i:c for c,i in dataset.class_to_idx.items()} # folder내의 사진과 폴더명들을 각각 dict 형태로 저장
 
 print(idx_to_class)
@@ -25,12 +25,12 @@ name_list = [] #target
 embedding_list = [] # image cropped된 데이터들의 리스트
 
 
-path = "./Face"
+path = "./face"
 file_list = os.listdir(path)
 
 
 for i in range(0, 10):
-    path_in = "./Face/" + idx_to_class[i]
+    path_in = "./face/" + idx_to_class[i]
     file_list_in = os.listdir(path_in)
     for j in range(0, 10):
         img = Image.open("./face/" + idx_to_class[i] + "/" + file_list_in[j])

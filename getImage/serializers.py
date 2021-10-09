@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from getImage.models import Image, LANGUAGE_CHOICES, STYLE_CHOICES   
+from getImage.models import Image  
 from django.core.files import File
 import base64
 

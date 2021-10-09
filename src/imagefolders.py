@@ -2,7 +2,7 @@ import os
 from PIL import Image
 
 #list of files
-path = '../media/face/'
+path = '../media/check/'
 file_list = os.listdir(path)
 print(file_list)
 
@@ -15,10 +15,10 @@ def createFolder(directory):
 
 #create directory
 for i in file_list:
-    new_path = './Face/' + i[:7]
+    new_path = '../media/Check/' + i[:7]
     createFolder(new_path + '/')
 
-new_path = './Face/'
+new_path = '../media/Check/'
 folder_list = os.listdir(new_path)
 print(folder_list)
 
